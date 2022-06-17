@@ -24,6 +24,7 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
+import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
 import java.io.FileNotFoundException;
 import java.util.Objects;
@@ -124,7 +125,7 @@ public class Mltext extends CordovaPlugin {
                             callbackContext.sendPluginResult(r);
                         }
 
-                        TextRecognizer textRecognizer = TextRecognition.getClient();
+                        TextRecognizer textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
 
                         if (bitmap != null)
                         {
